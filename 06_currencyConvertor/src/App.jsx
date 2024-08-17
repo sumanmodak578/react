@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { InputBox } from "./components";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
-import "./App.css";
 
 function App() {
   const [amount, setAmount] = useState(0);
@@ -16,7 +15,7 @@ function App() {
   const swap = () => {
     setFrom(to);
     setTo(from);
-    setConvertedAmount(to);
+    setConvertedAmount(amount);
     setAmount(convertedAmount);
   };
 
@@ -35,6 +34,7 @@ function App() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
+              convert();
             }}
           >
             <div className="w-full mb-1">
@@ -62,7 +62,7 @@ function App() {
                 amount={convertedAmount}
                 currencyOptions={options}
                 onCurrencyChange={(currency) => setTo(currency)}
-                selectCurrency={from}
+                selectCurrency={to}
                 amountDisable
               />
             </div>
