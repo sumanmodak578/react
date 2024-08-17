@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Garage from "./Car";
+import ReactIntro from "./ReactIntro";
 
 const myFristElement = <h1>Hello World!</h1>;
 
@@ -23,4 +24,4 @@ const anotherElement = (
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Garage />);
+root.render(<ReactIntro />);
